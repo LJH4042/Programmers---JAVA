@@ -1,0 +1,25 @@
+//정수가 담긴 리스트 num_list가 주어집니다. num_list의 홀수만 순서대로 이어 붙인 수와 짝수만 순서대로 이어 붙인 수의 합을 return하도록 solution 함수를 완성해주세요.
+
+class Solution_120 {
+    public int solution(int[] num_list) {
+        String odd = "";
+        String even = "";
+
+        for(int i = 0; i <num_list.length; i++){
+          if(num_list[i] % 2 == 1) odd += num_list[i];
+          else even += num_list[i];
+        }
+
+        return Integer.parseInt(odd) + Integer.parseInt(even);
+    }
+
+    public static void main(String[] args) {
+      Solution_120 s = new Solution_120();
+
+      int result1 = s.solution(new int[] {3, 4, 5, 2, 1});
+      int result2 = s.solution(new int[] {5, 7, 8, 3});
+
+      System.out.println(result1);
+      System.out.println(result2);
+    }
+}
